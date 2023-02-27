@@ -92,5 +92,53 @@ namespace ListasDoblementeLigadas
             }
             else { Console.WriteLine("LISTA VACIA!"); }
         }
+        public void RecorrerLista()
+        {
+            Nodo actual = siguiente;
+            while (actual != null)
+            {
+                Console.WriteLine(actual.datos + " ");
+                actual = actual.Siguiente;
+            }
+            Console.WriteLine();
+        }
+        public void NodoSiguiente(Nodo nodo)
+        {
+            if (nodo == null || nodo.Siguiente == null)
+            {
+                Console.WriteLine("El nodo no tiene nodo siguiente");
+            }
+            else
+            {
+                Console.WriteLine("El nodo siguiente es: " + nodo.Siguiente.datos);
+            }
+        }
+        public void NodoPrevio(Nodo nodo)
+        {
+            if (nodo == null || nodo.anterior == null)
+            {
+                Console.WriteLine("El nodo no tiene nodo anterior");
+            }
+            else
+            {
+                Console.WriteLine("El nodo anterior es: " + nodo.anterior.datos);
+            }
+        }
+        public Nodo Buscar(string datos)
+        {
+            Nodo actual = siguiente;
+
+            while (actual != null)
+            {
+                if (actual.datos == datos)
+                {
+                    return actual;
+                }
+                actual = actual.Siguiente;
+            }
+
+            return null;
+        }
+
     }
 }
