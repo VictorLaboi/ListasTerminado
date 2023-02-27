@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListasCircularesT", "ListasCircularesT\ListasCircularesT.csproj", "{2E09DE46-4C61-4CA0-8E72-F67557BE8297}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListasDoblesCirculares", "ListasDoblesCirculares\ListasDoblesCirculares.csproj", "{CAC18D9C-372E-430E-92B6-C3E4DBCF1867}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2E09DE46-4C61-4CA0-8E72-F67557BE8297}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E09DE46-4C61-4CA0-8E72-F67557BE8297}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E09DE46-4C61-4CA0-8E72-F67557BE8297}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAC18D9C-372E-430E-92B6-C3E4DBCF1867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAC18D9C-372E-430E-92B6-C3E4DBCF1867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAC18D9C-372E-430E-92B6-C3E4DBCF1867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAC18D9C-372E-430E-92B6-C3E4DBCF1867}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
