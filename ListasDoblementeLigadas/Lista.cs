@@ -9,30 +9,45 @@ namespace ListasDoblementeLigadas
     internal class Lista
     {
         public Nodo siguiente;
-        public Nodo anterior;
+        public Nodo anterioris;
         public Lista() {
             siguiente = null;
-            anterior = null;
+            anterioris = null;
         }
         public bool ValidaVacio() { 
             return siguiente == null;
         }
         public void VaciarLista() {
             siguiente = null;
-            anterior = null;
+            anterioris = null;
         }
-        public void IngresoDatos() { 
-            Nodo dat = new Nodo();
+        public int Indice(String datos)
+        {
+            int Indice = 0;
+            Nodo actual = siguiente;
+            while (actual != null)
+            {
+                if (actual.datos == datos)
+                {
+                    return Indice;
+                }
+                actual = actual.Siguiente;
+                Indice++;
+            }
+            return -1;
+        }
+        public void IngresoDatos(String dat) { 
+            Nodo dato = new Nodo(dat);
             if (siguiente == null)
             {
-                siguiente = dat;
-                anterior = dat;
+                siguiente = dato;
+                anterioris = dato;
             }
             else
             {
-                dat.Siguiente = siguiente;
-                anterior.anterior = dat;
-                anterior = dat;
+                dato.Siguiente = siguiente;
+                anterioris.anterior = dato;
+                anterioris = dato;
             }
         }
         public void AgregarFinal(string datos)
@@ -42,55 +57,50 @@ namespace ListasDoblementeLigadas
             if (siguiente == null)
             {   
                 siguiente = nuevoNodo;
-                anterior = nuevoNodo;
+                anterioris = nuevoNodo;
             }
             else
             {
-                nuevoNodo.anterior = anterior;
-                anterior.Siguiente = nuevoNodo;
-                anterior = nuevoNodo;
+                nuevoNodo.anterior = anterioris;
+                anterioris.Siguiente = nuevoNodo;
+                anterioris = nuevoNodo;
             }
         }
-        public void EliminarNodo(String datos)
-        {
-            Nodo actual = new Nodo();
-            Nodo anteriori = new Nodo();
-            actual = siguiente;
-            anteriori = null;
-            bool foundit = false;
-            if (actual != null)
+        public void EliminarNodo(String datos) {
+            if (ValidaVacio())
             {
-                do
-                {
-                    if (actual.datos == datos)
-                    {
-
-                        if (actual == siguiente)
-                        {
-                            siguiente = siguiente.Siguiente;
-                            anterior.Siguiente = siguiente;
-                        }
-                        else if (actual == anterior)
-                        {
-                            anterior.Siguiente = siguiente;
-                            anterior = anteriori;
-                        }
-                        else
-                        {
-                            anterior.Siguiente = actual.Siguiente;
-                        }
-                        Console.WriteLine("Nodo eliminado correctamente!");
-                        foundit = true;
-                    }
-                    anterior = actual;
-                    actual = actual.Siguiente;
-                } while (actual != siguiente && foundit != true);
-                if (!foundit)
-                {
-                    Console.WriteLine("NO ENCONTRADO!");
-                }
+                Console.WriteLine("La lista esta vacia");
+                return;
             }
-            else { Console.WriteLine("LISTA VACIA!"); }
+            Nodo actual = siguiente;
+
+            while (actual != null && actual.datos != datos)
+            {
+                actual = actual.Siguiente;
+            }
+            if (actual == null)
+            {
+                Console.WriteLine("El nodo {0} no se encontró en la lista", datos);
+                return;
+            }
+
+            if (actual.anterior == null)
+            {
+                siguiente = actual.Siguiente;
+            }
+            else
+            {
+                actual.anterior.Siguiente = actual.Siguiente;
+            }
+
+            if (actual.Siguiente == null)
+            {
+                anterioris = actual.anterior;
+            }
+            else
+            {
+                actual.Siguiente.anterior = actual.anterior;
+            }
         }
         public void RecorrerLista()
         {
