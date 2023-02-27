@@ -72,7 +72,7 @@ namespace ListasDoblesCirculares
                         l.Recorrer();
                         break;
                 }
-            } while (character >= 6);
+            } while (character != 6);
             Console.ReadKey();
         }
     }
