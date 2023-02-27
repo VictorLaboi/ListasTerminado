@@ -47,7 +47,7 @@ namespace ListasCircularesT
                 //Recorrido de lista
                 do
                 {
-                    Console.WriteLine("DATOS EN LISTA :" + desp.dato);
+                    Console.WriteLine("\nDATOS EN LISTA :" + desp.dato);
                     desp = desp.Siguiente;
 
                 } while (desp != nodoInicial);

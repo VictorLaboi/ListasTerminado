@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace ListasCircularesT
 {
@@ -11,37 +12,49 @@ namespace ListasCircularesT
         static void Main(string[] args)
         {
             Lista l = new Lista();
-            Console.WriteLine("LISTAS SIMPLES CIRCULARES!\nINGRESA OPCION.\nA:INSERTAR DATOS \nB:BUSCAR NODO\nC:ELIMINAR NODO.\nD:MOSTRAR LISTA");
-            char eleccion= (char)Console.Read();
-            switch (eleccion) {
-                case 'A': {
-                        Console.WriteLine("INGRESA EL DATO");
-                        string dat = Console.ReadLine();
-                        l.IniciarNodo(dat);
+            int character = 0;
+            do {
+                Console.WriteLine("\nLISTAS SIMPLES CIRCULARES!\nINGRESA OPCION.\nA:INSERTAR DATOS \nB:BUSCAR NODO\nC:ELIMINAR NODO.\nD:MOSTRAR LISTA\nINGRESA '6' PARA SALIR");
+                character = int.Parse(Console.ReadLine());
+                switch (character) 
+                {
+                    case 1:
+                        char op;
+                        do {
+                            Console.WriteLine("INGRESA EL DATO");
+                            string dat = Console.ReadLine();
+                            l.IniciarNodo(dat);
+                            Console.WriteLine("DESEA TERMINAR? N: NO|| S:SI");
+                            op = Convert.ToChar(Console.ReadLine().ToLower());
+                        } while (op == 'n' || op == 'N');
                         break;
-                    }
-                case 'B':{
-                        Console.WriteLine("INGRESA NODO A BUSCAR!");
-                        string dat = Console.ReadLine(); 
-                        l.BuscarNodo(dat);
+                    case 2:
+                        do
+                        {
+                            Console.WriteLine("INGRESA NODO A BUSCAR!");
+                            string dat1 = Console.ReadLine();
+                            l.BuscarNodo(dat1);
+                            Console.WriteLine("DESEA TERMINAR? N: NO|| S:SI");
+                            op = Convert.ToChar(Console.ReadLine().ToLower());
+                        } while (op == 'n' || op == 'N');
                         break;
-                    }
-                case 'C':
-                    {
-                        Console.WriteLine("INGRESA EL NODO A ELIMINAR");
-                        string dat = Console.ReadLine();
-                        l.EliminarNodo(dat);
+
+                    case 3:
+                        do
+                        {
+                            Console.WriteLine("INGRESA EL NODO A ELIMINAR");
+                            string dat2 = Console.ReadLine();
+                            l.EliminarNodo(dat2);
+                            Console.WriteLine("DESEA TERMINAR? N: NO|| S:SI");
+                            op = Convert.ToChar(Console.ReadLine().ToLower());
+                        } while (op == 'n' || op == 'N');
                         break;
-                    }
-                case 'D': {
+                    case 4:
                         l.DespliegueLista();
                         break;
-                    }
-                default: { 
-                    Console.WriteLine("NOT ALLOWE INSTRUCTION");
-                        break;
-                    }
-            }
+                }
+            } while (character!=6);
+            Console.ReadKey();
         }
     }
 }
