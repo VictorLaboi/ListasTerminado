@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListasDoblesCirculares", "L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListasDoblementeLigadas", "ListasDoblementeLigadas\ListasDoblementeLigadas.csproj", "{69C93097-121C-42F8-9CFC-B0E82B522CAF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListasSimplementeLigadas", "ListasSimplementeLigadas\ListasSimplementeLigadas.csproj", "{BC98BA1D-F762-4185-9A7C-D5E5B44D80AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{69C93097-121C-42F8-9CFC-B0E82B522CAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69C93097-121C-42F8-9CFC-B0E82B522CAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69C93097-121C-42F8-9CFC-B0E82B522CAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC98BA1D-F762-4185-9A7C-D5E5B44D80AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC98BA1D-F762-4185-9A7C-D5E5B44D80AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC98BA1D-F762-4185-9A7C-D5E5B44D80AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC98BA1D-F762-4185-9A7C-D5E5B44D80AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
