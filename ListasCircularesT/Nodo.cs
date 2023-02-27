@@ -10,7 +10,6 @@ namespace ListasCircularesT
     {
         public Nodo Siguiente;
         public String dato;
-
         public Nodo(String dat = "", Nodo siguiente = null)
         {
             dato = dat;
