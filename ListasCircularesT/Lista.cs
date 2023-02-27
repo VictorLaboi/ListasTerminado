@@ -85,6 +85,49 @@ namespace ListasCircularesT
                 Console.WriteLine("La lista esta vacia");
             }
         }
+        public void EliminarNodo(String datos)
+        {
+            Nodo actual = new Nodo();
+            Nodo anterior = new Nodo();
+            actual = nodoInicial;
+            anterior = null;
+            bool foundit = false;
+            if (actual != null)
+            {
+                do
+                {
+                    if (actual.dato == datos)
+                    {
+
+                        if (actual == nodoInicial)
+                        {
+                            nodoInicial = nodoInicial.Siguiente;
+                            ultimoNodo.Siguiente = nodoInicial;
+                        }
+                        else if (actual == ultimoNodo)
+                        {
+                            anterior.Siguiente = nodoInicial;
+                            ultimoNodo = anterior;
+                        }
+                        else
+                        {
+                            anterior.Siguiente = actual.Siguiente;
+                        }
+                        Console.WriteLine("Nodo eliminado correctamente!");
+                        foundit = true;
+                    }
+                    anterior = actual;
+                    actual = actual.Siguiente;
+                } while (actual != nodoInicial && foundit != true);
+                if (!foundit)
+                {
+                    Console.WriteLine("NO ENCONTRADO!");
+                }
+            }
+            else { Console.WriteLine("LISTA VACIA!"); }
+        }
+
+
 
     }
 }
