@@ -59,7 +59,6 @@ namespace ListasDoblesCirculares
             }
         }
 
-
         public void EliminarInicio()
         {
             if (ValidaVacio())
