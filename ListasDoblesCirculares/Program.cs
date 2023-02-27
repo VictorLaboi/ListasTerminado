@@ -14,7 +14,7 @@ namespace ListasDoblesCirculares
             int character = 0;
             do
             {
-                Console.WriteLine("\nLISTAS SIMPLES CIRCULARES!\nINGRESA OPCION.\nA:INSERTAR DATOS \nB:BUSCAR NODO\nC:ELIMINAR NODO.\nD:MOSTRAR LISTA\nINGRESA '6' PARA SALIR");
+                Console.WriteLine("\nLISTAS SIMPLES CIRCULARES!\nINGRESA OPCION.\n1:INSERTAR DATOS \n2:BUSCAR NODO\n3:ELIMINAR NODO.\n4:MOSTRAR LISTA\nINGRESA '6' PARA SALIR");
                 character = int.Parse(Console.ReadLine());
                 switch (character)
                 {
@@ -51,16 +51,17 @@ namespace ListasDoblesCirculares
                             op = Convert.ToChar(Console.ReadLine().ToLower());
                         } while (op == 'n' || op == 'N');
                         break;
-
                     case 3:
                         do
                         {
                             Console.WriteLine("1: ELIMINAR INICIO/2: ELIMINAR FINAL");
                             des = int.Parse(Console.ReadLine());
-                            if (des == 1) {
+                            if (des == 1)
+                            {
                                 l.EliminarInicio();
                             }
-                            else {
+                            else
+                            {
                                 l.EliminarFinal();
                             }
                             Console.WriteLine("DESEA TERMINAR? N: NO|| S:SI");
@@ -71,7 +72,7 @@ namespace ListasDoblesCirculares
                         l.Recorrer();
                         break;
                 }
-            } while (character != 6);
+            } while (character >= 6);
             Console.ReadKey();
         }
     }

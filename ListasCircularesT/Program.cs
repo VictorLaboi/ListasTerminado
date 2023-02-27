@@ -14,7 +14,7 @@ namespace ListasCircularesT
             Lista l = new Lista();
             int character = 0;
             do {
-                Console.WriteLine("\nLISTAS SIMPLES CIRCULARES!\nINGRESA OPCION.\nA:INSERTAR DATOS \nB:BUSCAR NODO\nC:ELIMINAR NODO.\nD:MOSTRAR LISTA\nINGRESA '6' PARA SALIR");
+                Console.WriteLine("\nLISTAS SIMPLES CIRCULARES!\nINGRESA OPCION.\n1:INSERTAR DATOS \n2:BUSCAR NODO\n3:ELIMINAR NODO.\n4:MOSTRAR LISTA\nINGRESA '6' PARA SALIR");
                 character = int.Parse(Console.ReadLine());
                 switch (character) 
                 {
