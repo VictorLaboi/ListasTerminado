@@ -38,6 +38,53 @@ namespace ListasCircularesT
             }
 
         }
+        public void DespliegueLista()
+        {
+            Nodo desp = new Nodo();
+            desp = nodoInicial;
+            if (desp != null)
+            {
+                //Recorrido de lista
+                do
+                {
+                    Console.WriteLine("DATOS EN LISTA :" + desp.dato);
+                    desp = desp.Siguiente;
+
+                } while (desp != nodoInicial);
+            }
+            else
+            {
+                Console.WriteLine("La lista esta vacia");
+            }
+
+        }
+        public void BuscarNodo(String datos)
+        {
+            Nodo desp = new Nodo();
+            desp = nodoInicial;
+            bool foundit = false;
+            if (desp != null)
+            {
+                //Recorrido de lista
+                do
+                {
+                    if (desp.dato == datos)
+                    {
+                        Console.WriteLine("Se ha encontrado el nodo: " + desp.dato);
+                        foundit = true;
+                    }
+                    desp = desp.Siguiente;
+                } while (desp != nodoInicial && foundit != true);
+                if (!foundit)
+                {
+                    Console.WriteLine("NODO NO ENCONTRADO!");
+                }
+            }
+            else
+            {
+                Console.WriteLine("La lista esta vacia");
+            }
+        }
 
     }
 }
